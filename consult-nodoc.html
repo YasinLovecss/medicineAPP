@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>无咨询医师</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<style type="text/css">
+		.mui-content{
+			text-align: center;
+		}
+			.mui-content img{
+				width: 150px;
+				height: 150px;
+				margin-top: 50px;
+			}
+			.mui-content>p:nth-child(2){
+				color: #000000;
+				margin-top: 50px;
+				font-size:20px ;
+			}
+			.mui-btn-block{
+				width: 94%;
+				margin: 10px 3%;
+				border: 0;
+				/*border-radius: 5px;*/
+				color: #fff;
+				background-color: #1abc9c;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span id="title">咨询</span>
+			<input type="search" name="" required="" placeholder="输入医师名称" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh-CN">
+		</header>
+		<div class="mui-content">
+			<img src="img/noconsults.png"/>
+			<p>您暂无互动咨询过的医师</p>
+			<p>适合您的医师等待您的咨询...</p>
+			<div class="mui-btn mui-btn-block">
+				立即咨询
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

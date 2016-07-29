@@ -1,0 +1,37 @@
+header>a>span {
+	color: #FFF;
+	font: 8px/1.6em/"microsoft yahei";
+}
+
+header {
+	background-image: url(../img/headbg.jpg);
+	background-size: cover;
+	line-height: 44px;
+}
+
+header>a {
+	color: #FFFFFF;
+}
+
+a:visited {
+	color: #FFF;
+}
+
+a:active {
+	color: #FFF;
+}
+
+#title {
+	margin-left: 20px;
+	color: #FFF;
+}
+
+header>input[type=search] {
+	float: right;
+	width: 40%;
+	background-color: #FFF;
+	background-image: url(../img/search.png);
+	background-size: 15px 15px;
+	background-position: 95%;
+	background-repeat: no-repeat;
+}

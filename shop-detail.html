@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<link rel="stylesheet" type="text/css" href="css/list.css"/>
+		<style type="text/css">
+			.mui-slider-item img{
+				width: 100%;
+				height: 200px;
+			}
+			.mui-navigate-right:after, .mui-push-left:after, .mui-push-right:after{
+				color: #69cb2f;
+			}
+			.mui-table-view{
+				padding: 10px;
+			}
+			.mui-table-view-cell{
+				height: 50px;
+				line-height: 30px;
+			}
+			.mui-btn-group{
+				margin: 20px 0;
+				padding: 0 5%;
+			}
+			.mui-btn-group>div{
+				padding: 0;
+				width: 45%;
+				height: 50px;
+				line-height: 50px;
+				color: #FFF;
+				border: 0;
+			}
+			.redbg{
+				background-color: #f25949;
+				background-image: url(img/shopping_cart.png);
+				background-size:20px 20px;
+				background-position: 14%;
+				background-repeat: no-repeat;
+			}
+			.greenbg{
+				background-color: #1abc9c;
+				background-image: url(img/collection.png);
+				background-size:20px 25px;
+				background-position: 25%;
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<!--商品图片轮播-->
+			<div id="slider" class="mui-slider" >
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="" alt="额外节点，第四章图片">
+					</a>
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="" alt="第一张图片">
+					</a>
+				</div>
+				<!-- 第二张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="" alt="第二张图片">
+					</a>
+				</div>
+				<!-- 第三张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="" alt="第三张图片">
+					</a>
+				</div>
+				<!-- 第四张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="" alt="第四张图片">
+					</a>
+				</div>
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="" alt="额外节点">
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<!--//商品图片轮播结束-->
+		<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<div class="mui-media-body">
+							商品类型
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a class='mui-navigate-right' href="javascript:;">
+						<div class="mui-media-body">
+							商品简介
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<div class="mui-media-body">
+							介绍医师
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<div class="mui-media-body">
+							商品评价
+						</div>
+					</a>
+				</li>
+			</ul>
+			<!--底部按钮-->
+			<div class="mui-btn-group">
+				<div class="mui-btn redbg">
+				加入购物车
+				</div>
+				<div class="mui-btn greenbg">
+				收藏
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

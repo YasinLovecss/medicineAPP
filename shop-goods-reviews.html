@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商品评价</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/list.css"/>
+		<style type="text/css">
+			.mui-nav-filter p {
+				color: #000000;
+				margin-bottom: 0;
+			}
+			
+			.mui-table-view {
+				padding: 0 3%;
+			}
+			.mui-table-view-cell>p:first-child {
+				height: 50px;
+				line-height: 50px;
+				border-bottom: 1px solid #EFEFF4;
+			}
+			
+			.mui-table-view-cell>p:first-child>img {
+				float: left;
+				width: 40px;
+				height: 40px;
+				margin: 5px;
+				border-radius: 100%;
+			}
+			.mui-table-view-cell>p:first-child>span:nth-child(2){
+				color: #000000;
+			}
+			.mui-table-view-cell>p:first-child>span:last-child {
+				float: right;
+				margin-right: 10px;
+			}
+			.mui-icon{
+				font-size: 15px;
+			}
+			.mui-icon-star{
+				color: #f25949;
+			}
+			.mui-icon-star-filled{
+				color: #f25949;
+			}
+			.mui-cell-bottom p:last-child{
+				float: right;
+				margin: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<!--筛选评论部分-->
+			<div class="mui-nav-filter height50">
+				<ul>
+					<li>
+						<p>全部评价</p>
+						<p>1453</p>
+					</li>
+					<li>
+						<p>好评</p>
+						<p>222</p>
+					</li>
+					<li>
+						<p>中评</p>
+						<p>22</p>
+					</li>
+					<li>
+						<p>差评</p>
+						<p>2</p>
+					</li>
+					<li>
+						<p>晒图</p>
+						<p>331</p>
+					</li>
+
+				</ul>
+			</div>
+			<!--//筛选评论部分-->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<p>
+						<img src="img/doctor.jpg" alt="用户头像" />
+						<span>某某某</span>
+						<span>2016-07-13</span>
+					</p>
+					<div class="mui-cell-bottom">
+						<!--评价的星星数量-->
+						<div class="icons mui-inline"> 
+							<i class="mui-icon mui-icon-star-filled"></i>
+							<i class="mui-icon mui-icon-star-filled"></i>
+							<i class="mui-icon mui-icon-star-filled"></i>
+							<i class="mui-icon mui-icon-star-filled"></i>
+							<i class="mui-icon mui-icon-star"></i>
+						</div>
+						<!--//评价的星星数量-->
+						<p class="comment-part">
+							不错，是正品哦，还不错还不错，是正品是正品是正品，还不错还不错，是正品是正品是正品
+						</p>
+						<p>
+							购买时间：<span>2016-07-04</span>
+						</p>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<p>
+						<img src="img/doctor.jpg" alt="用户头像" />
+						<span>某某某</span>
+						<span>2016-07-13</span>
+					</p>
+					<div class="mui-cell-bottom">
+						<!--评价的星星数量-->
+						<div class="icons mui-inline"> 
+							<i class="mui-icon mui-icon-star-filled"></i>
+							<i class="mui-icon mui-icon-star-filled"></i>
+							<i class="mui-icon mui-icon-star-filled"></i>
+							<i class="mui-icon mui-icon-star-filled"></i>
+							<i class="mui-icon mui-icon-star"></i>
+						</div>
+						<!--//评价的星星数量-->
+						<p class="comment-part">
+							不错，是正品哦，还不错还不错，是正品是正品是正品，还不错还不错，是正品是正品是正品
+						</p>
+						<p>
+							购买时间：<span>2016-07-04</span>
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>支付</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.goods-total {
+				margin: 80px 3% 0 3%;
+				border-radius: 5px;
+				height: 40px;
+				line-height: 40px;
+				text-indent: 1em;
+				background-color: #FFF;
+			}
+			
+			.goods-total>p {
+				float: right;
+				margin-right: 20px;
+				color: #000000;
+			}
+			
+			.mui-card {
+				margin-top: 20px;
+				border: 0;
+				background-color: #EFEFF4;
+			}
+			
+			.mui-input-group {
+				background-color: #EFEFF4;
+			}
+			
+			.mui-input-group .mui-input-row:after {
+				background-color: #FFF;
+			}
+			
+			.mui-input-group .mui-input-row {
+				height: 60px;
+				line-height: 60px;
+				margin-bottom: 10px;
+				background-color: #FFF;
+				border-radius: 5px;
+			}
+			
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 15px;
+			}
+			
+			.mui-checkbox input[type=checkbox]:checked:before,
+			.mui-radio input[type=radio]:checked:before {
+				color: #69cb2f;
+			}
+			
+			#wechat,
+			#alipay {
+				text-indent: 2em;
+				background-size: 30px 30px;
+				background-position: 5%;
+				background-repeat: no-repeat;
+			}
+			
+			#wechat {
+				background-image: url(img/wechat.png);
+			}
+			
+			#alipay {
+				background-image: url(img/alipay.png);
+			}
+			.mui-btn-group{
+				width: 100%;
+				position: absolute;
+				bottom: 100px;
+			}
+			.mui-btn{
+				padding: 0 20px;
+				border: 0;
+				height: 40px;
+				line-height: 40px;
+				color: #FFF;
+			}
+			.mui-btn-group>div:first-child{
+				width: 40%;
+				margin:0 20px 5%;
+				background-color: #1abc9c;
+			}.mui-btn-group>div:last-child{
+				background-color: #f25949;
+				width: 40%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="goods-total">商品合计
+				<p>￥ <span>1268.00</span></p>
+			</div>
+			<div class="mui-card">
+				<form class="mui-input-group">
+					<div class="mui-input-row mui-radio">
+						<label id="wechat">微信支付</label>
+						<input name="radio1" type="radio">
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label id="alipay">支付宝支付</label>
+						<input name="radio1" type="radio" checked>
+					</div>
+				</form>
+			</div>
+			<footer class="mui-btn-group">
+				<div class="mui-btn">
+					需付款: <span>1268.00</span>
+				</div>
+				<div class="mui-btn">
+					确认支付
+				</div>
+			</footer>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

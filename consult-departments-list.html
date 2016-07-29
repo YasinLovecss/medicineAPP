@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>科室列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span id="title">科室列表 </span>
+			<input type="search" name="" required="" placeholder="输入科室名称" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh-CN">
+		</header>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.init({
+				subpages: [{
+					url: 'consult-departments-list-subpage.html',
+					id: 'consult-departments-list-subpage',
+					styles: {
+						top: '45px', //mui标题栏默认高度为45px；
+						bottom: '0px', //默认为0px，可不定义；
+						bounce: 'vertical',
+						bounceBackground: '#efeff4'
+					},
+					extras: {}
+				}]
+			})
+		</script>
+	</body>
+
+</html>

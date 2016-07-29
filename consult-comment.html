@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>评价医师</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<link rel="stylesheet" type="text/css" href="css/list.css" />
+		<style type="text/css">
+			.mui-table-view-cell {
+				height: 100px;
+			}
+			
+			.mui-userpart,
+			.mui-docpart {
+				padding: 5px 3%;
+				width: 94%;
+				margin: 10px 3%;
+				background-color: #fff;
+			}
+			
+			.mui-userpart>img {
+				width: 50px;
+				height: 50px;
+				border-radius: 100%;
+				margin-top: 5px;
+			}
+			
+			.mui-docpart>img {
+				width: 50px;
+				height: 50px;
+				border-radius: 100%;
+				margin: 5px 3% 0 0;
+			}
+			
+			.mui-userpart p {
+				color: #000000;
+			}
+			
+			.mui-docpart p {
+				color: #000000;
+				margin: 10px 0 0 0;
+			}
+			
+			.mui-docpart>p>span:first-child {
+				font-size: 20px;
+				margin-right: 20px;
+			}
+			
+			.mui-btn-block {
+				width: 94%;
+				margin: 0 3%;
+				border: 0;
+				color: #fff;
+				background-color: #1abc9c;
+			}
+			
+			.ptime {
+				color: grey !important;
+			}
+			
+			.comment-part ,.comment-display{
+				width: 94%;
+				margin: 50px 3%;
+				text-align: center;
+			}
+			
+			.comment-part,.comment-display .icons {
+				color: #1abc9c;
+			}
+			
+			.comment-part .mui-btn {
+				width: 200px;
+				margin-top: 30px;
+				background-color: #1abc9c;
+				color: #fff;
+				border: 0;
+			}
+			#comment-display{
+				display: none;
+			}
+			/*.comment-part {
+				display: none;
+			}*/
+			.show-comment{
+				width: 94%;
+				margin: 10px 3%;
+				background-color: #fff;
+				border-radius: 5px;
+				text-align: left;
+				text-indent: 1em;
+				padding: 5px;
+			}
+			.show-comment>img{
+				margin-top: 10px;
+				width: 50px;
+				height: 50px;
+				border-radius: 100%;
+			}
+			.show-comment .mui-pull-right{
+				margin-right: 10px;
+			}
+			#showComment{
+				color: #000000;
+				margin: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span id="title">评价 </span>
+			<input type="search" name="" required="" placeholder="输入医师名称" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh-CN">
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-pull-left" src="img/doctor.jpg">
+						<div class="mui-media-body">
+							<p>
+								<span>谭德明</span>
+								<sapn>主任医师</sapn>
+								<span>
+									<i data-index="1" class="mui-icon mui-icon-star-filled"></i>
+									<i data-index="2" class="mui-icon mui-icon-star-filled"></i>
+									<i data-index="3" class="mui-icon mui-icon-star-filled"></i>
+									<i data-index="4" class="mui-icon mui-icon-star-filled"></i>
+									<i data-index="5" class="mui-icon mui-icon-star"></i>
+								</span>
+							</p>
+							<p>湖南中医院呼吸科 <i class="mui-icon mui-icon-arrowright mui-pull-right"></i></p>
+							<p>擅长诊治：<span>balabalabala</span></p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div class="comment-part" id="comment-part">
+				<textarea name="comment" rows="4" placeholder="请在此处填上评价" id="getComment"></textarea>
+				<p>评价医师</p>
+				<div class="icons" id="icons-fill">
+					<i data-index="1" class="mui-icon mui-icon-star"></i>
+					<i data-index="2" class="mui-icon mui-icon-star"></i>
+					<i data-index="3" class="mui-icon mui-icon-star"></i>
+					<i data-index="4" class="mui-icon mui-icon-star"></i>
+					<i data-index="5" class="mui-icon mui-icon-star"></i>
+				</div>
+				<div class="mui-btn" id="submit-comment">
+					确认提交评价
+				</div>
+			</div>
+			<div class="comment-display" id="comment-display">
+				<div class="show-comment" >
+					<img src="img/doctor.jpg" class="mui-pull-left"/>
+					<p id="showComment"></p>
+					<p class="mui-pull-right">2016-07-26</p>
+					<span class="mui-clearfix"></span>
+				</div>
+					<p>谢谢您的评价</p>
+				<div class="icons" id="icons-show">
+					<i data-index="1" class="mui-icon mui-icon-star"></i>
+					<i data-index="2" class="mui-icon mui-icon-star"></i>
+					<i data-index="3" class="mui-icon mui-icon-star"></i>
+					<i data-index="4" class="mui-icon mui-icon-star"></i>
+					<i data-index="5" class="mui-icon mui-icon-star"></i>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/feedback.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init();
+		
+	</script>
+
+</html>

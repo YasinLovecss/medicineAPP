@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>咨询</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<link rel="stylesheet" type="text/css" href="css/list.css"/>
+		<style type="text/css">
+			.mui-table-view-cell {
+				height: 100px;
+			}
+			.mui-userpart,.mui-docpart{
+				padding: 5px 3%;
+				width: 94%;
+				margin: 10px 3%;
+				background-color: #fff;
+			}
+			.mui-userpart>img{
+				width: 50px;
+				height: 50px;
+				border-radius: 100%;
+				margin-top: 5px;
+			}
+			.mui-docpart>img{
+				width: 50px;
+				height: 50px;
+				border-radius: 100%;
+				margin: 5px 3% 0 0;
+			}
+			.mui-userpart p{
+				color: #000000;
+			}
+			.mui-docpart p{
+				color: #000000;
+				margin:10px 0 0 0;
+			}
+			.mui-docpart>p>span:first-child{
+				font-size: 20px;
+				margin-right: 20px;
+			}
+			.mui-btn-block{
+				width: 94%;
+				margin: 0 3%;
+				border: 0;
+				color: #fff;
+				background-color: #1abc9c;
+			}
+			.ptime{
+				color: grey !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span id="title">咨询 </span>
+			<input type="search" name="" required="" placeholder="输入医师名称" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh-CN">
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-pull-left" src="img/doctor.jpg">
+						<div class="mui-media-body">
+							<p>
+								<span>谭德明</span>
+								<sapn>主任医师</sapn>
+								<span>
+									<i data-index="1" class="mui-icon mui-icon-star-filled"></i>
+									<i data-index="2" class="mui-icon mui-icon-star-filled"></i>
+									<i data-index="3" class="mui-icon mui-icon-star-filled"></i>
+									<i data-index="4" class="mui-icon mui-icon-star-filled"></i>
+									<i data-index="5" class="mui-icon mui-icon-star"></i>
+								</span>
+							</p>
+							<p>湖南中医院呼吸科 <i class="mui-icon mui-icon-arrowright mui-pull-right"></i></p>
+							<p>擅长诊治：<span>balabalabala</span></p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div class="mui-userpart">
+				<img src="img/doctor.jpg" class="mui-pull-right"/>
+				<h4>头晕头疼难受</h4>
+				<p>疾病：<span>头晕发胀</span></p>
+				<p>病情描述：<span>一到下午就晕晕的,左半边头上部偶尔跳痛,上午 没事,特别是下午两点到四点间,晕感特别明显,走路都发软 头晕,坐下把头低到膝盖以下就好些,就像脑供血不足,低头 后就有一种血液充满大脑的感觉。</span></p>
+				<p class="mui-pull-right ptime">2016-07-08</p>
+				<div class="mui-clearfix"></div>
+			</div>
+			<div class="mui-docpart">
+				<img src="img/doctor.jpg" class="mui-pull-left"/>
+				<p><span>谭德明</span><span>主任医师</span></p>
+				<p>湖南中医院呼吸科</p>
+				<span class="mui-clearfix"></span>
+				<p>先要完善化验和检查,测血压,血常规,脑血管超声,再除外 一下颈椎病。为什么会考虑肿瘤?</p>
+				<p class="mui-pull-right ptime">2016-07-08</p>
+				<div class="mui-clearfix"></div>
+			</div>
+			<div class="mui-btn mui-btn-block">
+				是否有帮助？立即评价
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+		</script>
+	</body>
+
+</html>

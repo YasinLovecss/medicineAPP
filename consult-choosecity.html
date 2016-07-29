@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>选择城市</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<style type="text/css">
+			#title {
+				padding: 5px 10px;
+				background-color: #fff;
+				color: #000000;
+				border-radius: 5px;
+				margin-right: 10px;
+			}
+			
+			header i {
+				color: #fff;
+			}
+			
+			.mui-content>ul {
+				padding: 10px 3%;
+				background-color: #EFEFF4;
+				list-style-type: none;
+			}
+			
+			.mui-content>ul>li {
+				float: left;
+				width: 30%;
+				height: 50px;
+				margin-right: 3%;
+				margin-bottom: 10px;
+				background-color: #fff;
+				border-radius: 5px;
+				text-align: center;
+				line-height: 50px;
+			}
+			
+			.selected {
+				color: #fff;
+				background-color: #69cb2f !important;
+			}
+			
+			.mui-btn {
+				padding: 0;
+				width: 94%;
+				height: 50px;
+				line-height: 50px;
+				margin: 10px 3%;
+				border: 0;
+				border-radius: 5px;
+			}
+			
+			p {
+				color: #000000;
+			}
+			
+			.mui-btn>p:nth-child(1) {
+				margin-left: 10px;
+				float: left;
+			}
+			
+			.mui-btn>p:nth-child(2) {
+				float: right;
+				margin-right: 10px;
+			}
+			
+			.mui-btn i {
+				color: #69CB2F;
+			}
+			
+			footer {
+				position: fixed;
+				width: 100%;
+				bottom: 100px;
+				text-align: center;
+			}
+			
+			footer>img {
+				width: 60px;
+				height: 80px;
+			}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4Uy4A9KfbmA1uX0vbmHnZRkqswg08wvg"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-bars mui-pull-left"></a>
+			<span id="title">北京 </span><i class="mui-icon mui-icon-arrowup"></i>
+			<input type="search" name="" required="" placeholder="输入医师名称" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh-CN">
+		</header>
+		<div class="mui-content">
+			<ul>
+				<li class="selected">全城</li>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+			</ul>
+			<div class="mui-clearfix">
+
+			</div>
+			<div class="mui-btn mui-btn-block">
+				<p>当前城市：<span id="current-city">北京市</span></p>
+				<p>切换 <i class="mui-icon mui-icon-arrowright"></i></p>
+			</div>
+			<footer>
+				<img src="img/location.png" />
+			</footer>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			//百度地图定位跟当前城市
+			function myFun(result) {
+			var	 cityName = result.name;
+			document.getElementById("current-city").innerText =cityName;
+			}
+			var myCity = new BMap.LocalCity();
+			myCity.get(myFun);
+		</script>
+	</body>
+
+</html>

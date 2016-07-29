@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/list.css"/>
+		<style type="text/css">
+			.mui-table-view{
+				padding: 0 3%;
+			}
+			.mui-table-view-cell{
+				height: 100px;
+			}
+			.mui-media  img{
+				max-width: 80px;
+				height: 80px;
+				border-radius: 5px;
+				margin-right: 20px;
+			}
+			.mui-media-body p{
+				color: #000000;
+			}
+			.mui-media-body>p~p{
+				margin-top: 10px;
+			}
+			.mui-numbox{
+				float: right;
+				margin-top: -30px;
+			}
+			.mui-icon{
+				color: #69cb2f;
+			}
+			.mui-input-numbox{
+				color: #f25949;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-pull-left" src="img/doctor.jpg">
+						<div class="mui-media-body">
+							<p>商品名称</p>
+							<p>数量</p>
+							<div class="mui-numbox" data-numbox-min='1' data-numbox-max='100'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number" value="1" />
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div>
+							<p>商品详情 <i class="mui-pull-right mui-icon mui-icon-arrowright"></i></p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-pull-left" src="img/doctor.jpg">
+						<div class="mui-media-body">
+							<p>商品名称</p>
+							<p>数量</p>
+							<div class="mui-numbox" data-numbox-min='1' data-numbox-max='100'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number" value="1" />
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div>
+							<p>商品详情 <i class="mui-pull-right mui-icon mui-icon-arrowright"></i></p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-pull-left" src="img/doctor.jpg">
+						<div class="mui-media-body">
+							<p>商品名称</p>
+							<p>数量</p>
+							<div class="mui-numbox" data-numbox-min='1' data-numbox-max='100'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number" value="1" />
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div>
+							<p>商品详情 <i class="mui-pull-right mui-icon mui-icon-arrowright"></i></p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-pull-left" src="img/doctor.jpg">
+						<div class="mui-media-body">
+							<p>商品名称</p>
+							<p>数量</p>
+							<div class="mui-numbox" data-numbox-min='1' data-numbox-max='100'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number" value="1" />
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div>
+							<p>商品详情 <i class="mui-pull-right mui-icon mui-icon-arrowright"></i></p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>
