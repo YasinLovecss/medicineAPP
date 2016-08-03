@@ -1,0 +1,60 @@
+header {
+	text-align: center;
+	line-height: 44px;
+}
+
+header i,
+header span {
+	color: #FFFFFF;
+}
+
+a:visited {
+	color: #FFF;
+}
+
+a:active {
+	color: #FFF;
+}
+
+.mui-icon {
+	font-weight: 600;
+}
+
+.mui-input-group:before,
+.mui-input-group:after {
+	background-color: #EFEFF4;
+}
+.mui-bar #title{
+	top:-45px;
+	position: relative;
+}
+.mui-bar-nav.mui-bar .mui-icon{
+	margin-right: 0;
+}
+.mui-input-group {
+	margin-top: 20px;
+	width: 100%;
+	background-color: #EFEFF4;
+	border: 0;
+}
+
+.mui-input-group input {
+	width: 94%;
+	margin-left: 3%;
+	border-radius: 5px;
+	background-color: #fff;
+	margin-bottom: 20px;
+}
+
+.mui-input-group input[type=button] {
+	position: absolute;
+	width: 100px;
+	height: 30px;
+	right: 30px;
+	top: 5px;
+	border: 1px solid #EFEFF4;
+}
+	.mui-input-group>span {
+				font-size: 13px;
+				margin-left: 3%;
+}

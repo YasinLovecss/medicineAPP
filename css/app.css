@@ -91,7 +91,9 @@ a:active {
 .dgreen {
 	background-color: #1abc9c;
 }
-
+.bred{
+	background-color: #f25949;
+}
 .mui-content-bottom {
 	margin-top: 10px;
 }
@@ -155,4 +157,7 @@ a:active {
 	padding: 10px;
 	border-bottom: 1px groove #EFEFF4;
 	border-top: 1px groove #EFEFF4;
+}
+.greyfont{
+	color: #A6A6A6;
 }
