@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<style type="text/css">
+			.postings-part{
+				margin-top: 20px;
+				padding: 10px;
+				width: 94%;
+				margin-left: 3%;
+				border-radius: 5px;
+				background-color: #fff;
+			}
+			.postings-part img{
+				width: 80px;
+				height: 60px;
+				margin-right: 20px;
+			}
+			.postings-part p{
+				color: #000000;
+			}
+			.postings-part p span{
+				color: #60c826;
+			}
+			.postings-showpart{
+				margin-top: 10px;
+				width: 100%;
+				border-top: 1px solid #a6a6a6;
+				border-bottom: 1px solid #a6a6a6;
+				padding: 10px 3%;
+			}
+			.postings-showpart p{
+				background-color: #FFF;
+				padding: 10px;
+				border-radius: 5px;
+				color: #000;
+			}
+			.postings-showpart p i{
+				color: #60c826;
+			}
+			.postings-showpart p span:first-child{
+				margin-left: 10%;
+			}
+			.postings-dimension{
+				max-height: 90px;
+			}
+			.postings-dimension p:first-child{
+				height: 90px;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			.postings-dimension p:last-child{
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				height:90px;
+				max-height: 90px;
+				overflow: hidden;
+			}
+			.mui-btn-group{
+				width: 100%;
+				padding:20px  3%;
+				text-align: center;
+			}
+			.mui-btn-group .mui-btn{
+				color: #fff;
+				border: 0;
+				width: 100px;
+			}
+			.mui-btn-group .mui-btn~.mui-btn{
+				margin-left: 50px;
+			}
+			.mui-table-view{
+				background-color: #EFEFF4;
+				width: 100%;
+			}
+			.mui-table-view:before,.mui-table-view:after{
+				background-color: #EFEFF4;
+			}
+			.mui-table-view>p{
+				margin-left: 3%;
+			}
+			.mui-table-view-cell{
+				width: 94%;
+				margin-left: 3%;
+				background-color: #fff;
+				border-bottom: 1px solid #EFEFF4;
+			}
+			.mui-table-view-cell:after{
+				background-color: #FFF;
+			}
+			.mui-table-view-cell img{
+				width: 80px;
+				height: 60px;
+				margin-right: 20px;
+			}
+			.mui-table-view-cell p:first-child{
+				margin-top: 10px;
+			}
+			.mui-table-view-cell p{
+				color: #000000;
+			}
+			.mui-media-body>p>span:last-child{
+				color: grey;
+				margin-left: 20px;
+				font-size: 13px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<!--帖子标题-->
+			<div class="postings-part">
+				<img src="img/doctor.jpg" class="mui-pull-left"/>
+				<p>糖尿病患者需要的哪些注意事项?</p>
+				<p>来自<span>糖尿病交流专区</span></p>
+			</div>
+			<!--//帖子标题-->
+			<!--帖子内容-->
+			<div class="postings-showpart">
+				<p>发帖人: <span>谭德明</span> <span>医生</span> <i class="mui-icon mui-icon-arrowright mui-pull-right"></i></p>
+				<div class="postings-dimension">
+					<p class="mui-pull-left">内容:</p>
+					<p>职业日所需总热量。男性比女性每天所 需热量要高约5%。而年龄大小不同所需热量也
+					<i class="mui-icon mui-icon-arrowright mui-pull-right"></i>
+					</p>
+				</div>
+			</div>
+			<!--//帖子内容-->
+			
+			<div class="mui-btn-group">
+				<div class="mui-btn lgreen">
+					评论
+				</div>
+				<div class="mui-btn dgreen">
+					收藏
+				</div>
+			</div>
+			
+			<!--推荐商品部分-->
+			<div class="mui-content-bottom">
+				<ul class="mui-table-view">
+					<p>推荐商品</p>
+					<li class="mui-table-view-cell mui-media">
+						<img src="img/doctor.jpg" class="mui-pull-left"/>
+						<div class="mui-media-body">
+							<p><span>糖尿病药</span>  <span>购买量：88</span></p>
+							<p>药到病除</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<img src="img/doctor.jpg" class="mui-pull-left"/>
+						<div class="mui-media-body">
+							<p><span>糖尿病药</span>  <span>购买量：88</span></p>
+							<p>药到病除</p>
+						</div>
+					</li>
+				</ul>
+				<div class="mui-btn-group">
+					<div class="mui-btn lgreen">
+						更多推荐
+					</div>
+				</div>
+			</div>
+			<!--//推荐商品部分-->
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

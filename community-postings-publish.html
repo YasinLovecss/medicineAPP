@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>发表帖子</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.mui-input-row .mui-input-clear~.mui-icon-clear,
+			.mui-input-row .mui-input-password~.mui-icon-eye,
+			.mui-input-row .mui-input-speech~.mui-icon-speech {
+				top: 25px;
+			}
+			
+			.mui-views,
+			.mui-view,
+			.mui-pages,
+			.mui-page,
+			.mui-page-content {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #efeff4;
+			}
+			
+			.mui-navbar {
+				background-image: url(img/headbg.jpg);
+				background-size: cover;
+				line-height: 44px;
+			}
+			
+			.mui-pages {
+				top: 46px;
+				height: auto;
+			}
+			
+			.mui-scroll-wrapper,
+			.mui-scroll {
+				background-color: #efeff4;
+			}
+			
+			.mui-page.mui-transitioning {
+				-webkit-transition: -webkit-transform 200ms ease;
+				transition: transform 200ms ease;
+			}
+			
+			.mui-page-left {
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+			
+			.mui-ios .mui-page-left {
+				-webkit-transform: translate3d(-20%, 0, 0);
+				transform: translate3d(-20%, 0, 0);
+			}
+			
+			.mui-navbar {
+				position: fixed;
+				right: 0;
+				left: 0;
+				z-index: 10;
+				height: 44px;
+				background-color: #f7f7f8;
+			}
+			
+			.mui-bar-nav>span {
+				color: #007aff;
+				font-size: 16px;
+			}
+			
+			.mui-navbar .mui-bar {
+				position: absolute;
+				background: transparent;
+				text-align: center;
+			}
+			
+			.mui-android .mui-navbar-inner.mui-navbar-left {
+				opacity: 0;
+			}
+			
+			.mui-ios .mui-navbar-left .mui-left,
+			.mui-ios .mui-navbar-left .mui-center,
+			.mui-ios .mui-navbar-left .mui-right {
+				opacity: 0;
+			}
+			
+			.mui-navbar .mui-btn-nav {
+				-webkit-transition: none;
+				transition: none;
+				-webkit-transition-duration: .0s;
+				transition-duration: .0s;
+			}
+			
+			.mui-navbar .mui-bar .mui-title {
+				display: inline-block;
+				position: static;
+				width: auto;
+				color: #fff;
+			}
+			
+			.mui-page-shadow {
+				position: absolute;
+				right: 100%;
+				top: 0;
+				width: 16px;
+				height: 100%;
+				z-index: -1;
+				content: '';
+			}
+			
+			.mui-page-shadow {
+				background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+				background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+			}
+			
+			.mui-navbar-inner.mui-transitioning,
+			.mui-navbar-inner .mui-transitioning {
+				-webkit-transition: opacity 200ms ease, -webkit-transform 200ms ease;
+				transition: opacity 200ms ease, transform 200ms ease;
+			}
+			
+			.mui-page {
+				display: none;
+			}
+			
+			.mui-pages .mui-page {
+				display: block;
+			}
+			
+			.mui-page .mui-table-view:first-child {
+				margin-top: 15px;
+			}
+			
+			.mui-page .mui-table-view:last-child {
+				margin-bottom: 30px;
+			}
+			
+			.mui-table-view {
+				margin-top: 20px;
+			}
+			
+			.mui-table-view:after {
+				height: 0;
+			}
+			
+			.mui-table-view span.mui-pull-right {
+				color: #999;
+			}
+			
+			.mui-table-view-divider {
+				background-color: #efeff4;
+				font-size: 14px;
+			}
+			
+			.mui-table-view-divider:before,
+			.mui-table-view-divider:after {
+				height: 0;
+			}
+			
+			.mui-content-padded {
+				margin: 10px 0px;
+			}
+			
+			.mui-input-row input {
+				width: 100%;
+				margin: 20px 0;
+				padding: 5px 10px;
+				border: 0;
+			}
+			
+			#publish-cover-btn img {
+				max-width: 100px;
+				max-height: 80px;
+			}
+			.mui-table-view-chevron li:last-child{
+				max-height: 8em;
+			}
+			.mui-content-bottom .mui-btn{
+				background-color: #1abc9c;
+				color: #fff;
+				border:0;
+				width: 94%;
+				margin:100px 3%;
+				
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/list.css" />
+	</head>
+
+	<body>
+		<!--页面主结构开始-->
+		<div id="app" class="mui-views">
+			<div class="mui-view">
+				<div class="mui-navbar">
+				</div>
+				<div class="mui-pages">
+				</div>
+			</div>
+		</div>
+		<!--页面主结构结束-->
+		<!--单页面开始-->
+		<div id="setting" class="mui-page">
+			<!--页面标题栏开始-->
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-bars"></span>
+				</button>
+				<h1 class="mui-center mui-title">发布帖子</h1>
+			</div>
+			<!--页面标题栏结束-->
+			<!--页面主内容区开始-->
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+								<a id="publish-title-btn" href="#change-title" class="mui-navigate-right">标题<span id="showtitle" class="mui-pull-right">撰写标题</span></a>
+
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="publish-cover-btn" class="mui-navigate-right">封面 <img id="showcover" src="img/doctor.jpg" class="mui-pull-right" /></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="publish-kind-btn" href="#select-kind" class="mui-navigate-right">分类<span class="mui-pull-right">选择分类</span></a>
+							</li>
+							<!--<li class="mui-table-view-cell">
+								<a id="publish-instruction" href="#change-instruction" class="mui-navigate-right">说明<span id="showinstruction" class="mui-pull-right">撰写说明</span></a>
+							</li>-->
+							<li class="mui-table-view-cell">
+								<a id="publish-content-btn" href="#change-content" class="mui-navigate-right">正文</a>
+								<p id="showcontent">撰写正文</p>
+							</li>
+						</ul>
+						<div class="mui-content-bottom">
+							<div class="mui-btn mui-btn-block">
+								发布帖子
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--页面主内容区结束-->
+		</div>
+		<!--撰写标题-->
+		<div id="change-title" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>取消
+				</button>
+				<h1 class="mui-center mui-title">撰写标题</h1>
+				<span id="titlesub" class="mui-pull-right">保存</span>
+			</div>
+			<div class="mui-page-content">
+				<div class="row mui-input-row">
+					<input id='title-inner' class="mui-input-clear" placeholder="请填写帖子标题..." />
+				</div>
+			</div>
+		</div>
+		<!--撰写标题结束-->
+
+		<!--选择分类-->
+		<div id="select-kind" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>取消
+				</button>
+				<h1 class="mui-center mui-title">选择分类</h1>
+				<span class="mui-pull-right">保存</span>
+			</div>
+			<div class="mui-page-content">
+				lalal
+			</div>
+		</div>
+		<!--选择分类结束-->
+
+		<!--撰写说明-->
+		<div id="change-instruction" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>取消
+				</button>
+				<h1 class="mui-center mui-title">撰写说明</h1>
+				<span id="instructionsub" class="mui-pull-right">保存</span>
+			</div>
+			<div class="mui-page-content">
+				<div class="row mui-input-row">
+					<input id='instruction-inner' class="mui-input-clear" placeholder="请填写帖子说明..." />
+				</div>
+			</div>
+		</div>
+		<!--撰写说明结束-->
+		
+		<!--撰写正文-->
+		<div id="change-content" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>取消
+				</button>
+				<h1 class="mui-center mui-title">撰写正文</h1>
+				<span id="contentsub" class="mui-pull-right">保存</span>
+			</div>
+			<div class="mui-page-content">
+				<div class="row mui-input-row">
+					<textarea rows="15" id='content-inner' class="mui-input-clear" placeholder="请填写正文部分"></textarea>
+				</div>
+			</div>
+		</div>
+		<!--撰写正文结束-->
+	</body>
+	<script src="js/mui.min.js "></script>
+	<script src="js/mui.view.js "></script>
+	<script src='js/feedback.js'></script>
+	<script src="js/app.js"></script>
+	<script>
+		mui.init();
+		//初始化单页view
+		var viewApi = mui('#app').view({
+			defaultPage: '#setting'
+		});
+		//初始化单页的区域滚动
+		mui('.mui-scroll-wrapper').scroll();
+
+		var view = viewApi.view;
+		(function($) {
+			//处理view的后退与webview后退
+			var oldBack = $.back;
+			$.back = function() {
+				if(viewApi.canBack()) { //如果view可以后退，则执行view的后退
+					viewApi.back();
+				} else { //执行webview后退
+					oldBack();
+				}
+			};
+			//监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
+			//第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
+			view.addEventListener('pageBeforeShow', function(e) {
+				//				console.log(e.detail.page.id + ' beforeShow');
+			});
+			view.addEventListener('pageShow', function(e) {
+				//进入手执设定界面时
+				if(e.detail.page.id == 'lock') {
+					var settings = app.getSettings();
+					/*if (!settings.autoLogin) {
+						plus.nativeUI.toast('当前没有启用 “自动登录”，需要在登录时启用 "自动登录"，设定的手势锁屏才会升效。');
+					}*/
+					var lockStateButton = document.getElementById("lockState");
+					var locker = document.querySelector('.mui-locker');
+					lockStateButton.classList[settings.gestures ? 'add' : 'remove']('mui-active')
+					locker.style.display = settings.gestures ? 'block' : 'none';
+				}
+				//				console.log(e.detail.page.id + ' show');
+			});
+			view.addEventListener('pageBeforeBack', function(e) {
+				//				console.log(e.detail.page.id + ' beforeBack');
+			});
+			view.addEventListener('pageBack', function(e) {
+				//				console.log(e.detail.page.id + ' back');
+			});
+		})(mui);
+		//处理撰写标题等信息并显示
+		var titleSub = document.getElementById("titlesub");
+		var titleInner; //标题内容
+		var showTitle = document.getElementById("showtitle");
+		titleSub.addEventListener("tap", function() {
+			titleInner = document.getElementById("title-inner").value;
+			if(titleInner === "" || titleInner === null) {
+				mui.toast("请输入标题...");
+				return false;
+			} else {
+				showTitle.innerText = titleInner;
+				mui.back();
+			}
+		});
+
+		//处理撰写说明等信息并显示
+		var instructionsub = document.getElementById("instructionsub");
+		var instructionInner;
+		var showInstruction = document.getElementById("showinstruction");
+		instructionsub.addEventListener("tap", function() {
+			instructionInner = document.getElementById("instruction-inner").value;
+			if(instructionInner === "" || instructionInner === null) {
+				mui.toast("请输入帖子说明...");
+				return false;
+			} else {
+				showInstruction.innerText = instructionInner;
+				mui.back();
+			}
+		});
+		
+		//处理撰写正文等信息并显示
+		var contentsub = document.getElementById("contentsub");
+		var contentInner;
+		var showContent = document.getElementById("showcontent");
+		contentsub.addEventListener("tap", function() {
+			contentInner = document.getElementById("content-inner").value;
+			if(contentInner === "" || contentInner === null) {
+				mui.toast("正文部分不能为空...");
+				return false;
+			} else {
+				showContent.innerText = contentInner;
+				mui.back();
+			}
+		});
+		
+		//选取封面图片
+		var showCover = document.getElementById("showcover");
+		var uploadImg = document.getElementById("publish-cover-btn");
+		uploadImg.addEventListener('tap', function() {
+			plus.gallery.pick(function(e) {
+				showCover.src = e.files[0];
+			}, function(e) {
+				mui.toast("选取照片失败，请重新选择...");
+			}, {
+				filter: "image",
+				multiple: true,
+				maximum: 3,
+				system: false,
+				onmaxed: function() {
+					plus.nativeUI.alert('最多只能选择3张图片');
+				}
+			});
+		})
+	</script>
+
+</html>

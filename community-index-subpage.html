@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<style type="text/css">
+			body{
+				padding: 0;
+			}
+			.banner>img{
+				width: 100%;
+				height: 200px;
+			}
+			.add-follow{
+				width: 94%;
+				height: 30px;
+				line-height: 30px;
+				background-color: #fff;
+				border-radius: 5px;
+				margin:10px 3%;
+				text-indent: 1em;
+			}
+			.add-follow i{
+				color: #60c826;
+				font-weight:600 ;
+				margin-right: 10px;
+			}
+			.mui-twoclos-content{
+				padding: 0;
+			}
+			.mui-twoclos-content ul li{
+				float: left;
+				background-color: #fff;
+				width: 48%;
+				margin-right: 2%;
+				border-radius: 5px;
+				text-align: center;
+				height: 50px;
+				line-height: 50px;
+				color: #fff;
+			}
+			.show-postings>ul{
+				padding: 0;
+				background-color: #EFEFF4;
+				list-style-type: none;
+			}
+			.show-postings>ul>li{
+				background-color: #fff;
+				padding: 5px 0;
+				width: 94%;
+				margin-left: 3%;
+				border-bottom: 1px solid #EFEFF4;
+			}
+			.show-postings>ul>li:first-child{
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+			}
+			.show-postings>ul>li:last-child{
+				text-align: center;
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+			.show-postings>ul>li>img{
+				width: 50px;
+				height: 50px;
+				margin:5px 10px;
+			}
+			.show-postings>ul>li p{
+				color: #000000;
+			}
+			.show-postings>ul>li p>span{
+				color: #60c826;
+			}
+			.show-postings>ul>li>.mui-btn{
+				border: 0;
+				background-color:  #60c826;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<!--banner图片-->
+			<div class="banner">
+				<img src="img/banner.png"/>
+			</div>
+			<!--//banner图片-->
+			<div class="add-follow">
+				我的关注
+				<i class="mui-icon mui-icon-plusempty mui-pull-right"></i>
+			</div>
+			<!--展示我用户关注的社区-->
+			<div class="mui-twoclos-content">
+				<ul>
+					<li>糖尿病交流社区</li>
+					<li>两性健康话题</li>
+				</ul>
+				<span class="mui-clearfix"></span>
+			</div>
+			<!--//展示我用户关注的社区-->
+			<!--展示推荐的帖子-->
+			<div class="show-postings">
+				<ul>
+				<li>
+						<img class="mui-pull-left" src="img/doctor.jpg">
+						<div class="mui-media-body">
+							<p>	糖尿病患者需要的哪些注意事项?</p>
+							<p>来自 <span>糖尿病交流专区</span></p>
+						</div>
+				</li>
+				<li>
+						<img class="mui-pull-left" src="img/doctor.jpg">
+						<div class="mui-media-body">
+							<p>	糖尿病患者需要的哪些注意事项?</p>
+							<p>来自 <span>糖尿病交流专区</span></p>
+						</div>
+				</li>
+				<li>
+						<img class="mui-pull-left" src="img/doctor.jpg">
+						<div class="mui-media-body">
+							<p>	糖尿病患者需要的哪些注意事项?</p>
+							<p>来自 <span>糖尿病交流专区</span></p>
+						</div>
+				</li>
+				<li>
+					<div class="mui-btn">
+						更多推荐
+					</div>
+				</li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

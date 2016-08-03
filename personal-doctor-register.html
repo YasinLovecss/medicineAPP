@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<style type="text/css">
+			.mui-bar {
+				background-color: #f25949;
+			}
+			
+			.mui-input-group i {
+				position: absolute;
+				width: 100px;
+				height: 30px;
+				right: -20px;
+			}
+			
+			.mui-input-group .visible {
+				background-image: url(img/doctorvisible.png);
+				background-repeat: no-repeat;
+				background-size: 30px 25px;
+				top: 125px;
+			}
+			
+			.mui-input-group .invisible {
+				background-image: url(img/doctorinvisible.png);
+				background-repeat: no-repeat;
+				background-size: 30px 17px;
+				background-position: 0 10px;
+				top: 125px;
+			}
+			
+			.mui-content>input {
+				width: 94%;
+				color: #A6A6A6;
+				border: 0;
+				border-radius: 5px;
+				margin: 10px 3%;
+				text-align: center;
+			}
+			
+			.mui-content>p {
+				color: #f25949;
+			}
+			
+			.mui-content>p>span {
+				margin-left: 5%;
+			}
+			
+			#sendcode {
+				color: #939393;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<i class="mui-action-back mui-icon mui-icon-closeempty mui-pull-right"></i>
+			<span class="mui-clearfix"></span>
+			<span id="title">注册</span>
+		</header>
+		<div class="mui-content">
+			<div class="mui-input-group">
+				<input type="number" name="phone" id="phone" value="" placeholder="请输入11位中国大陆手机号" />
+				<input type="button" name="" id="sendcode" value="获取验证码" />
+				<input type="number" name="msgcode" id="msgcode" value="" placeholder="填写短信验证码" />
+				<input type="password" name="password" id="password" value="" placeholder="设置密码,6-20位字母或数字" />
+				<i id="changevisible" class="visible"></i>
+				<span>点击注册即同意 XXX在线服务条款</span>
+			</div>
+			<input type="button" id="login" value="注册" disabled="disabled" />
+			<p>
+				<span>登录</span>
+			</p>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/loginabout.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			var phoneNumber = document.getElementById("phone");
+			var msgCode = document.getElementById("msgcode");
+			var sendCode = document.getElementById("sendcode");
+			var pwd = document.getElementById("password");
+			sendCode.addEventListener('tap', function() {
+				if(phoneNumber.value == "" || phoneNumber.value == null) {
+					mui.toast("请输入手机号")
+				} else {
+					timer(this, 60);
+				}
+			})
+			var changeVisible = document.getElementById("changevisible");
+			var visClass;
+			changeVisible.addEventListener("tap", function() {
+				toggleClass(changeVisible, visClass, "visible", "invisible");
+			})
+		</script>
+	</body>
+
+</html>

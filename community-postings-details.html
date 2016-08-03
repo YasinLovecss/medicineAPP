@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>帖子详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<style type="text/css">
+			header .mui-icon{
+				color: #FFF;
+				font-size: 15px;
+				margin-left: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-bars mui-pull-left"></a>
+			<span id="title">社区</span><i class="mui-icon mui-icon-plus"></i>
+			<input type="search" name="" required="" placeholder="输入关键词" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh-CN">
+		</header>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.init({
+				subpages: [{
+					url: 'community-postings-details-subpage.html',
+					id: 'community-postings-details-subpage',
+					styles: {
+						top: '45px', //mui标题栏默认高度为45px；
+						bottom: '0px', //默认为0px，可不定义；
+						bounce: 'vertical',
+						bounceBackground: '#efeff4'
+					},
+					extras: {}
+				}]
+			})
+		</script>
+	</body>
+
+</html>
