@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<style type="text/css">
+			header i{
+				width: 30px;
+				height: 40px;
+				background-repeat: no-repeat;
+				background-image: url(img/whiteloca.png);
+				background-size:20px 25px ;
+				background-position: 80% 10px;
+			}
+			.mui-table-view-cell{
+				line-height: 40px;
+			}
+			.mui-table-view-cell input{
+				float: right;
+				margin-bottom: 0;
+				width: 60%;
+			}
+			input[type=radio]{
+				/*visibility: hidden;*/
+			}
+			.mui-table-view-cell .defaultimg{
+				float: left;
+				width: 30px;
+				height: 30px;
+				margin-top: 10px;
+				background-repeat:no-repeat ;
+				background-size:20px 20px ;
+			}
+			.notchecked{
+				background-image: url(img/greycircle.png);
+			}
+			.checked{
+				background-image: url(img/indexloca.png);
+			}
+			.mui-btn-group{
+				text-align: center;
+				margin-top: 40px;
+			}
+			.mui-btn{
+				border: 0;
+				color: #fff;
+				background-color: #1abc9c;
+				width: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span id="title">地址编辑 </span>
+			<i class="mui-pull-right"></i>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<span>收货人姓名：</span>
+					<input type="text" name="consignee" id="consignee" value="" />
+				</li>
+				<li class="mui-table-view-cell">
+					<span>手机号：</span>
+					<input type="number" name="phone" id="phone" value="" />
+				</li>
+				<li class="mui-table-view-cell">
+					<span>收件地址:</span>
+					<textarea name="adress" rows="3" id="adress"></textarea>
+				</li>
+				<li class="mui-table-view-cell">
+					<span class="defaultimg notchecked" id="imgcont"></span>
+					<span for="isdefault" id="changedefault">设为默认地址</span>
+				</li>
+			</ul>
+			<div class="mui-btn-group">
+				<div class="mui-btn">
+					保存
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var isDefault = document.getElementById("isdefault");
+			var changeDefault = document.getElementById("changedefault");
+			var imgCont = document.getElementById("imgcont");
+			changeDefault.addEventListener("tap",function() {
+				var imgContClass = imgCont.getAttribute('class');
+				if (imgContClass === "defaultimg notchecked") {
+					imgCont.setAttribute('class','defaultimg checked');
+					changeDefault.style.color = "#f25949";
+				} else{
+					imgCont.setAttribute('class','defaultimg notchecked');
+					changeDefault.style.color = "#000";
+				}
+			})
+
+		</script>
+	</body>
+
+</html>

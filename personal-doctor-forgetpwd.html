@@ -14,9 +14,9 @@
 			
 			.mui-input-group i {
 				position: absolute;
-				width: 100px;
+				width: 30px;
 				height: 30px;
-				right: -20px;
+				right: 20px;
 			}
 			
 			.mui-input-group .visible {
@@ -54,6 +54,10 @@
 			#sendcode {
 				color: #939393;
 			}
+			#resetpwd{
+				color: #fff;
+				background-color: #f25949;
+			}
 		</style>
 	</head>
 
@@ -71,28 +75,13 @@
 				<input type="password" name="password" id="password" value="" placeholder="设置密码,6-20位字母或数字" />
 				<i id="changevisible" class="visible"></i>
 			</div>
-			<input type="button" id="login" value="设置新密码" disabled="disabled" />
+			<input type="button" id="resetpwd" value="设置新密码"  />
 		</div>
 		<script src="js/mui.min.js"></script>
-		<script src="js/loginabout.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/resetpwd.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
-			var phoneNumber = document.getElementById("phone");
-			var msgCode = document.getElementById("msgcode");
-			var sendCode = document.getElementById("sendcode");
-			var pwd = document.getElementById("password");
-			sendCode.addEventListener('tap', function() {
-				if(phoneNumber.value == "" || phoneNumber.value == null) {
-					mui.toast("请输入手机号")
-				} else {
-					timer(this, 60);
-				}
-			})
-			var changeVisible = document.getElementById("changevisible");
-			var visClass;
-			changeVisible.addEventListener("tap", function() {
-				toggleClass(changeVisible, visClass, "visible", "invisible");
-			})
 		</script>
 	</body>
 

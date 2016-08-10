@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>完善个人信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/pageview.css" />
+		<style>
+			#upload-usericon img {
+				width: 80px;
+				height: 80px;
+			}
+			
+			.mui-navbar {
+				background-color: #29bb9c;
+			}
+			
+			.mui-table-view-chevron>li:first-child {
+				line-height: 82px;
+			}
+			
+			.mui-bar-nav button .mui-icon {
+				color: #fff;
+				font-weight: 600;
+				font-size: 2em;
+			}
+			
+			.mui-content-bottom .mui-btn {
+				margin-top: 30px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/list.css" />
+	</head>
+
+	<body id="app">
+		<!--页面主结构开始-->
+		<div id="app" class="mui-views">
+			<div class="mui-view">
+				<div class="mui-navbar">
+				</div>
+				<div class="mui-pages">
+				</div>
+			</div>
+		</div>
+		<!--页面主结构结束-->
+		<!--单页面开始-->
+		<div id="setting" class="mui-page">
+			<!--页面标题栏开始-->
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-btn  mui-btn-link mui-btn-nav mui-pull-right" onclick="history.go(-1)">
+					<span class="mui-icon mui-icon-closeempty"></span>
+				</button>
+				<h1 class="mui-center mui-title">完善个人资料</h1>
+			</div>
+			<!--页面标题栏结束-->
+			<!--页面主内容区开始-->
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+								<a id="upload-usericon" class="mui-navigate-right">头像 <img id="usericon" src="img/userlogicon.png" class="mui-pull-right" /></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="update-username" href="#upload-username" class="mui-navigate-right">用户名 <span class="mui-pull-right">{{info.nickname}}</span></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="update-sex" href="#upload-sex" class="mui-navigate-right">性别<span  class="mui-pull-right">{{info.sex}}</span></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="" href="#" class="mui-navigate-right">所在城市<span id="" class="mui-pull-right"></span></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="manage-adress" href="" class="mui-navigate-right">地址管理<span id="" class="mui-pull-right"></span></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="" href="#" class="mui-navigate-right">实名认证<span id="" class="mui-pull-right"></span></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="" href="#" class="mui-navigate-right">账户安全<span id="" class="mui-pull-right"></span></a>
+							</li>
+
+						</ul>
+						<div class="mui-content-bottom">
+							<div class="mui-btn mui-btn-block">
+								保存
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--页面主内容区结束-->
+		</div>
+		<!--修改用户名-->
+		<div id="upload-username" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+				</button>
+				<h1 class="mui-center mui-title">更改用户名</h1>
+				<span  class="mui-pull-right" @click = "fRename()">保存</span>
+			</div>
+			<div class="mui-page-content">
+				<div class="row mui-input-row">
+					<input id='username-inner' class="mui-input-clear" placeholder="请输入用户名" />
+				</div>
+			</div>
+		</div>
+		<!--撰写标题结束-->
+
+		<!--选择性别-->
+		<div id="upload-sex" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>
+				</button>
+				<h1 class="mui-center mui-title">选择性别</h1>
+				<span  class="mui-pull-right" v-on:tap ="fGoback()">保存</span>
+			</div>
+			<div class="mui-page-content">
+				<ul id="sex" class="mui-table-view">
+					<li class="kindselected" @click ="fSelectSex">男</li>
+					<li class="mui-table-view-cell" @click ="fSelectSex">女</li>
+					<li class="mui-table-view-cell" @click ="fSelectSex">保密</li>
+				</ul>
+			</div>
+		</div>
+		<!--选择性别结束-->
+
+	</body>
+	<script src="js/mui.min.js "></script>
+	<script src="js/mui.view.js "></script>
+	<script src='js/feedback.js'></script>
+	<script src="js/app.js"></script>
+	<script src="js/vue.js"></script>
+	<script>
+		mui.init();
+		//初始化单页view
+		var viewApi = mui('#app').view({
+			defaultPage: '#setting'
+		});
+		//初始化单页的区域滚动
+		mui('.mui-scroll-wrapper').scroll();
+
+		var view = viewApi.view;
+		(function($) {
+			//处理view的后退与webview后退
+			var oldBack = $.back;
+			$.back = function() {
+				if(viewApi.canBack()) { //如果view可以后退，则执行view的后退
+					viewApi.back();
+				} else { //执行webview后退
+					oldBack();
+				}
+			};
+			//监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
+			//第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
+			view.addEventListener('pageBeforeShow', function(e) {
+				//				console.log(e.detail.page.id + ' beforeShow');
+			});
+			view.addEventListener('pageShow', function(e) {
+				//进入手执设定界面时
+				if(e.detail.page.id == 'lock') {
+					var settings = app.getSettings();
+					/*if (!settings.autoLogin) {
+						plus.nativeUI.toast('当前没有启用 “自动登录”，需要在登录时启用 "自动登录"，设定的手势锁屏才会升效。');
+					}*/
+					var lockStateButton = document.getElementById("lockState");
+					var locker = document.querySelector('.mui-locker');
+					lockStateButton.classList[settings.gestures ? 'add' : 'remove']('mui-active')
+					locker.style.display = settings.gestures ? 'block' : 'none';
+				}
+				//				console.log(e.detail.page.id + ' show');
+			});
+			view.addEventListener('pageBeforeBack', function(e) {
+				//				console.log(e.detail.page.id + ' beforeBack');
+			});
+			view.addEventListener('pageBack', function(e) {
+				//				console.log(e.detail.page.id + ' back');
+			});
+		})(mui);
+
+
+
+		//选择性别时动态改变li标签颜色
+			function fSelectSex(){
+			var sexUl = document.getElementById("sex");
+			var sexGroup = sexUl.getElementsByTagName('li');
+			for(i = 0; i < sexGroup.length; i++) {
+				sexGroup[i].addEventListener('tap', function () {
+					var thisSex = this;
+					for (j = 0; j < sexGroup.length; j++) {
+						if (thisSex == sexGroup[j]) {
+							thisSex.setAttribute('class', 'kindselected');
+						} else {
+							sexGroup[j].setAttribute('class', 'kindnotselected');
+						}
+					}
+				})
+			}
+		}
+
+		//更换头像
+		mui(".mui-table-view-cell").on("tap", "#upload-usericon", function(e) {
+			if(mui.os.plus) {
+				var a = [{
+					title: "拍照"
+				}, {
+					title: "从手机相册选择"
+				}];
+				plus.nativeUI.actionSheet({
+					title: "上传头像",
+					cancel: "取消",
+					buttons: a
+				}, function(b) {
+					switch(b.index) {
+						case 0:
+							break;
+						case 1:
+							getImage();
+							break;
+						case 2:
+							galleryImg();
+							break;
+						default:
+							break
+					}
+				})
+			}
+
+		});
+
+		function getImage() {
+			var c = plus.camera.getCamera();
+			c.captureImage(function(e) {
+				plus.io.resolveLocalFileSystemURL(e, function(entry) {
+					var s = entry.toLocalURL() + "?version=" + new Date().getTime();
+					console.log(s);
+					document.getElementById("usericon").src = s;
+					document.getElementById("usericon").style.borderRadius = "100%";
+					var image = new Image();
+					image.crossOrigin = '';
+					image.src = s;
+					image.onload = function() {
+							var base64 = getBase64Image(image);
+							console.log(base64);
+						}
+						//变更大图预览的src
+						//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+						//					document.querySelector("#__mui-imageview__group .mui-slider-item img").src = s + "?version=" + new Date().getTime();;;
+				}, function(e) {
+					console.log("读取拍照文件错误：" + e.message);
+				});
+			}, function(s) {
+				console.log("error" + s);
+			}, {
+				filename: "_doc/head.jpg"
+			})
+		}
+
+		function galleryImg() {
+			plus.gallery.pick(function(a) {
+				plus.io.resolveLocalFileSystemURL(a, function(entry) {
+					plus.io.resolveLocalFileSystemURL("_doc/", function(root) {
+						root.getFile("head.jpg", {}, function(file) {
+							//文件已存在
+							file.remove(function() {
+								console.log("file remove success");
+								entry.copyTo(root, 'head.jpg', function(e) {
+										var e = e.fullPath + "?version=" + new Date().getTime();
+										document.getElementById("usericon").src = e;
+										var image = new Image();
+										image.crossOrigin = '';
+										image.src = e;
+										image.onload = function() {
+											var base64 = getBase64Image(image);
+											console.log(base64);
+										}
+										document.getElementById("usericon").style.borderRadius = "100%";
+
+										//变更大图预览的src
+										//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+										//										document.querySelector("#__mui-imageview__group .mui-slider-item img").src = e + "?version=" + new Date().getTime();;
+									},
+									function(e) {
+										console.log('copy image fail:' + e.message);
+									});
+							}, function() {
+								console.log("delete image fail:" + e.message);
+							});
+						}, function() {
+							//文件不存在
+							entry.copyTo(root, 'head.jpg', function(e) {
+									var path = e.fullPath + "?version=" + new Date().getTime();
+									document.getElementById("usericon").src = path;
+									document.getElementById("usericon").style.borderRadius = "100%";
+
+									//变更大图预览的src
+									//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+									//									document.querySelector("#__mui-imageview__group .mui-slider-item img").src = path;
+								},
+								function(e) {
+									console.log('copy image fail:' + e.message);
+								});
+						});
+					}, function(e) {
+						console.log("get _www folder fail");
+					})
+				}, function(e) {
+					console.log("读取拍照文件错误：" + e.message);
+				});
+			}, function(a) {}, {
+				filter: "image"
+			})
+		};
+		document.getElementById("manage-adress").onclick = function() {
+			location.href = "personal-user-adminadress.html";
+		}
+
+		function getBase64Image(img) {
+			var canvas = document.createElement("canvas");
+			canvas.width = img.width;
+			canvas.height = img.height;
+
+			var ctx = canvas.getContext("2d");
+			ctx.drawImage(img, 0, 0, img.width, img.height);
+			var ext = img.src.substring(img.src.lastIndexOf(".") + 1).toLowerCase();
+			var dataURL = canvas.toDataURL("image/" + ext);
+			return dataURL;
+		}
+
+		var arr={
+			info:{
+				"nickname":"",
+				"sex":"男"
+			}
+		};
+		var vueCont = new Vue({
+			el:"#app",
+			data:arr,
+			methods:{
+				fRename:function(){
+					var username = document.getElementById('username-inner').value;
+					if(username.length >8){
+						mui.toast("昵称过长");
+						return false;
+					}
+					vueCont.info.nickname = username;
+					mui.back();
+				},
+				fSelectSex:function(obj){
+					vueCont.info.sex = obj.target.innerText;
+				},
+				fGoback:function(){
+					mui.back();
+				}
+
+			},
+			ready:function(){
+				fSelectSex();
+			}
+		})
+	</script>
+
+</html>

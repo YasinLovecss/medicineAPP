@@ -24,9 +24,9 @@
 			
 			.mui-input-group i {
 				position: absolute;
-				width: 100px;
+				width: 30px;
 				height: 30px;
-				right: -20px;
+				right: 20px;
 			}
 			
 			.mui-input-group .visible {
@@ -98,20 +98,14 @@
 			</div>
 			<input type="button" id="login" value="登录" />
 			<p>
-				<span>注册</span>
+				<span id="forgetpwd">忘记密码</span>
 			</p>
 		</div>
 		<script src="js/mui.min.js"></script>
+		<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/loginabout.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
-			var phoneNumber = document.getElementById("phone");
-			var pwd = document.getElementById("password");
-			var changeVisible = document.getElementById("changevisible");
-			var visClass;
-			changeVisible.addEventListener("tap", function() {
-				toggleClass(changeVisible, visClass, "visible", "invisible");
-			})
 		</script>
 	</body>
 

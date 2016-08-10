@@ -7,194 +7,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
 		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/list.css"/>
+		<link rel="stylesheet" type="text/css" href="css/pageview.css"/>
 		<style>
-			html,
-			body {
-				background-color: #efeff4;
-			}
-			
-			.mui-input-row .mui-input-clear~.mui-icon-clear,
-			.mui-input-row .mui-input-password~.mui-icon-eye,
-			.mui-input-row .mui-input-speech~.mui-icon-speech {
-				top: 25px;
-			}
-			
-			.mui-views,
-			.mui-view,
-			.mui-pages,
-			.mui-page,
-			.mui-page-content {
-				position: absolute;
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				width: 100%;
-				height: 100%;
-				background-color: #efeff4;
-			}
-			
-			.mui-navbar {
+			.mui-navbar{
 				background-image: url(img/headbg.jpg);
-				background-size: cover;
-				line-height: 44px;
 			}
-			
-			.mui-pages {
-				top: 46px;
-				height: auto;
-			}
-			
-			.mui-scroll-wrapper,
-			.mui-scroll {
-				background-color: #efeff4;
-			}
-			
-			.mui-page.mui-transitioning {
-				-webkit-transition: -webkit-transform 200ms ease;
-				transition: transform 200ms ease;
-			}
-			
-			.mui-page-left {
-				-webkit-transform: translate3d(0, 0, 0);
-				transform: translate3d(0, 0, 0);
-			}
-			
-			.mui-ios .mui-page-left {
-				-webkit-transform: translate3d(-20%, 0, 0);
-				transform: translate3d(-20%, 0, 0);
-			}
-			
-			.mui-navbar {
-				position: fixed;
-				right: 0;
-				left: 0;
-				z-index: 10;
-				height: 44px;
-				background-color: #f7f7f8;
-			}
-			
-			.mui-bar-nav>span {
-				color: #007aff;
-				font-size: 16px;
-			}
-			
-			.mui-navbar .mui-bar {
-				position: absolute;
-				background: transparent;
-				text-align: center;
-			}
-			
-			.mui-android .mui-navbar-inner.mui-navbar-left {
-				opacity: 0;
-			}
-			
-			.mui-ios .mui-navbar-left .mui-left,
-			.mui-ios .mui-navbar-left .mui-center,
-			.mui-ios .mui-navbar-left .mui-right {
-				opacity: 0;
-			}
-			
-			.mui-navbar .mui-btn-nav {
-				-webkit-transition: none;
-				transition: none;
-				-webkit-transition-duration: .0s;
-				transition-duration: .0s;
-			}
-			
-			.mui-navbar .mui-bar .mui-title {
-				display: inline-block;
-				position: static;
-				width: auto;
-				color: #fff;
-			}
-			
-			.mui-page-shadow {
-				position: absolute;
-				right: 100%;
-				top: 0;
-				width: 16px;
-				height: 100%;
-				z-index: -1;
-				content: '';
-			}
-			
-			.mui-page-shadow {
-				background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
-				background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
-			}
-			
-			.mui-navbar-inner.mui-transitioning,
-			.mui-navbar-inner .mui-transitioning {
-				-webkit-transition: opacity 200ms ease, -webkit-transform 200ms ease;
-				transition: opacity 200ms ease, transform 200ms ease;
-			}
-			
-			.mui-page {
-				display: none;
-			}
-			
-			.mui-pages .mui-page {
-				display: block;
-			}
-			
-			.mui-page .mui-table-view:first-child {
-				margin-top: 15px;
-			}
-			
-			.mui-page .mui-table-view:last-child {
-				margin-bottom: 30px;
-			}
-			
-			.mui-table-view {
-				margin-top: 20px;
-			}
-			
-			.mui-table-view:after {
-				height: 0;
-			}
-			
-			.mui-table-view span.mui-pull-right {
-				color: #999;
-			}
-			
-			.mui-table-view-divider {
-				background-color: #efeff4;
-				font-size: 14px;
-			}
-			
-			.mui-table-view-divider:before,
-			.mui-table-view-divider:after {
-				height: 0;
-			}
-			
-			.mui-content-padded {
-				margin: 10px 0px;
-			}
-			
-			.mui-input-row input {
-				width: 100%;
-				margin: 20px 0;
-				padding: 5px 10px;
-				border: 0;
-			}
-			
 			#publish-cover-btn img {
 				max-width: 100px;
 				max-height: 80px;
-			}
-			.mui-table-view-chevron li:last-child{
-				max-height: 8em;
-			}
-			.mui-content-bottom .mui-btn{
-				background-color: #1abc9c;
-				color: #fff;
-				border:0;
-				width: 94%;
-				margin:100px 3%;
-				
 			}
 		</style>
 		<link rel="stylesheet" type="text/css" href="css/list.css" />
@@ -234,7 +56,7 @@
 								<a id="publish-cover-btn" class="mui-navigate-right">封面 <img id="showcover" src="img/doctor.jpg" class="mui-pull-right" /></a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a id="publish-kind-btn" href="#select-kind" class="mui-navigate-right">分类<span class="mui-pull-right">选择分类</span></a>
+								<a id="publish-kind-btn" href="#select-kind" class="mui-navigate-right">分类<span id="showkind" class="mui-pull-right">选择分类</span></a>
 							</li>
 							<!--<li class="mui-table-view-cell">
 								<a id="publish-instruction" href="#change-instruction" class="mui-navigate-right">说明<span id="showinstruction" class="mui-pull-right">撰写说明</span></a>
@@ -278,10 +100,15 @@
 					<span class="mui-icon mui-icon-left-nav"></span>取消
 				</button>
 				<h1 class="mui-center mui-title">选择分类</h1>
-				<span class="mui-pull-right">保存</span>
+				<span id="kindsub" class="mui-pull-right">保存</span>
 			</div>
 			<div class="mui-page-content">
-				lalal
+				<ul id="kind" class="mui-table-view">
+					<li class="mui-table-view-cell">分类1</li>
+					<li class="mui-table-view-cell">分类2</li>
+					<li class="mui-table-view-cell">分类3</li>
+					<li class="mui-table-view-cell">分类4</li>
+				</ul>
 			</div>
 		</div>
 		<!--选择分类结束-->
@@ -411,6 +238,35 @@
 				return false;
 			} else {
 				showContent.innerText = contentInner;
+				mui.back();
+			}
+		});
+		
+		//处理选择分类等信息并显示
+		var kindSub = document.getElementById("kindsub");
+		var selectedKind = "";
+		var showKind = document.getElementById("showkind");
+		var kindUl = document.getElementById("kind");
+		var kindGroup = kindUl.getElementsByTagName('li');
+		for (i = 0;i<kindGroup.length;i++) {
+			kindGroup[i].addEventListener('tap',function() {
+				var thiskind = this;
+				selectedKind = thiskind.innerText;
+				for (j =0 ; j<kindGroup.length;j++) {
+					if (thiskind == kindGroup[j]) {
+						thiskind.setAttribute('class','kindselected');
+					} else{
+						kindGroup[j].setAttribute('class','kindnotselected');
+					}
+				}
+			})
+		}
+		kindSub.addEventListener("tap", function() {
+			if(selectedKind === "" || selectedKind === null) {
+				mui.toast("请选择分类");
+				return false;
+			} else {
+				showKind.innerText = selectedKind;
 				mui.back();
 			}
 		});

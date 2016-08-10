@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/list.css" />
+		<style type="text/css">
+			.mui-table-view-cell>p:first-child {
+				color: #000000;
+				font-size: 18px;
+			}
+			
+			.mui-table-view-cell span {
+				color: #69cb2f;
+				font-size: 2em;
+				margin-top: -30px;
+			}
+			.mui-btn-group{
+				text-align: center;
+				margin-top: 10px;
+			}
+			.mui-btn-group .mui-btn{
+				border: 0;
+				background-color: #60c826;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<p>
+						某某产品
+					</p>
+					<p>
+						2016-03-16 21:12:18
+					</p>
+					<span class="mui-pull-right">+16.00</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<p>
+						某某产品
+					</p>
+					<p>
+						2016-03-16 21:12:18
+					</p>
+					<span class="mui-pull-right">+16.00</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<p>
+						某某产品
+					</p>
+					<p>
+						2016-03-16 21:12:18
+					</p>
+					<span class="mui-pull-right">+16.00</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<p>
+						某某产品
+					</p>
+					<p>
+						2016-03-16 21:12:18
+					</p>
+					<span class="mui-pull-right">+16.00</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<p>
+						某某产品
+					</p>
+					<p>
+						2016-03-16 21:12:18
+					</p>
+					<span class="mui-pull-right">+16.00</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<p>
+						某某产品
+					</p>
+					<p>
+						2016-03-16 21:12:18
+					</p>
+					<span class="mui-pull-right">+16.00</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<p>
+						某某产品
+					</p>
+					<p>
+						2016-03-16 21:12:18
+					</p>
+					<span class="mui-pull-right">+16.00</span>
+				</li>
+			</ul>
+			<div class="mui-btn-group" id="showmore">
+				<div class="mui-btn">
+					显示更多
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var liGroup = document.getElementsByTagName('li');
+			var showMoreBtn = document.getElementById("showmore");
+			var bHeight = window.innerHeight;
+			var limitNum = (bHeight-200)/60;
+			limitNum = Math.floor(limitNum);
+		</script>
+	</body>
+
+</html>

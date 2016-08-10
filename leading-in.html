@@ -3,10 +3,17 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>导入页</title>
+		<title>导入页(身份选择)</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
 		<style type="text/css">
+		.mui-bar {
+				background-color: #1abc9c;
+			}
+			.mui-bar #title{
+				top: 0;
+			}
 			.middle{
 				width: 100%;
 				height: 230px;
@@ -37,6 +44,11 @@
 	</head>
 
 	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span id="title">选择身份</span>
+
+		</header>
+		
 		<div class="mui-content">
 			<div class="middle">
 				<div class="middlebg">
@@ -52,6 +64,16 @@
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init();
+			var left = document.getElementById("left");
+			var right  = document.getElementById("right");
+			left.onclick = function() {
+				localStorage.myType = "patient";
+				location.href = 'personal-user-quicklog.html';
+			}
+			right.onclick = function() {
+				localStorage.myType = "doctor";
+				location.href = 'personal-doctor-quicklog.html';
+			}
 		</script>
 	</body>
 

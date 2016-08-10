@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>互动详情页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/list.css" />
+		<style type="text/css">
+			ul li img {
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+			}
+			
+			.leftcorner {
+				width: 0;
+				height: 0;
+				border-width: 5px 10px;
+				border-style: solid;
+				border-color: transparent #f25949 transparent transparent;
+				position: absolute;
+				margin-left: -2%;
+				margin-top: 10px;
+			}
+			
+			.rightcorner {
+				width: 0;
+				height: 0;
+				border-width: 5px 10px;
+				border-style: solid;
+				border-color: transparent transparent transparent #1abc9c;
+				position: absolute;
+				margin-top: 10px;
+				margin-left: 81%;
+			}
+			
+			.leftpart img {
+				float: left;
+			}
+			
+			.dialog p {
+				max-width: 60%;
+				color: #fff;
+				border-radius: 5px;
+			}
+			
+			.leftdialog p {
+				padding: 10px;
+				margin-left: 15%;
+				background-color: #f25949;
+			}
+			
+			.rightdialog p {
+				float: right;
+				padding: 10px;
+				background-color: #1abc9c;
+				margin-right: 2%;
+			}
+			
+			ul li>span:first-child {
+				color: #c1c3c4;
+				font-size: 13px;
+			}
+			
+			.mui-table-left>span:first-child {
+				margin-left: 15%;
+			}
+			
+			.mui-table-right>span:first-child {
+				float: right;
+				width: 100%;
+				text-align: right;
+				margin-right: 15%;
+			}
+			
+			.rightpart {
+				width: 100%;
+				float: right;
+			}
+			
+			.rightpart img {
+				float: right;
+			}
+			
+			.mui-content-bottom {
+				position: fixed;
+				width: 100%;
+				height: 50px;
+				bottom: -10px;
+			}
+			
+			.mui-content-bottom input[type=text] {
+				border: 0;
+				width: 85%;
+				text-align: center;
+			}
+			
+			.mui-content-bottom input[type=button] {
+				border: 0;
+				background-color: #1abc9c;
+				color: #fff;
+				width: 15%;
+				float: right;
+				height: 40px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content" id="app">
+			<ul class="mui-table-view">
+				<li  v-for="item in items" v-bind:class = "[item.id?'mui-table-left':'mui-table-right']">
+					<span>{{item.time}}</span>
+					<div v-bind:class = "[item.id?'leftpart':'rightpart']">
+						<img v-if="item.id" src="img/doctorlogicon.png" />
+						<img v-else src="img/userlogicon.png"> 
+						<span></span>
+						<div class="dialog"  v-bind:class = "[item.id?'leftdialog':'rightdialog']">
+							<span v-bind:class ="[item.id?'leftcorner':'rightcorner']"></span>
+							<p>{{item.msg}}</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="mui-content-bottom">
+				<input type="text" name="msg" id="msg" placeholder="请输入内容..." />
+				<input type="button" name="sendmsg" id="sendmsg" @click="fSendMsg()" value="发送" disabled="disabled" />
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/time.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			var msg = document.getElementById("msg");
+			var sendMsg = document.getElementById("sendmsg");
+			msg.oninput = function() {
+				if(msg.value) {
+					sendMsg.removeAttribute("disabled");
+					msg.style.textAlign = "left";
+				} else {
+					sendMsg.disabled = "disabled";
+					msg.style.textAlign = "center";
+				}
+			}
+			//数据显示
+			var arr = {
+					items:[]
+				}
+			var vueCont = new Vue({
+				el: "#app",
+				data: arr,
+				methods: {
+					fSendMsg:function() {
+						var msgVal = document.getElementById("msg").value;
+						var nowTime = fGetTime();
+						 vueCont.items.push({
+							"time" : nowTime,
+							"msg" : msgVal,
+							'id' : (localStorage.myType === "doctor")
+						});
+						document.getElementById("msg").value;
+					}
+				},
+				ready: function() {
+				}
+			})
+		</script>
+	</body>
+
+</html>

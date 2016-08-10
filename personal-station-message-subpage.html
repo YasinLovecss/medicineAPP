@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/list.css" />
+		<style type="text/css">
+			.mui-table-view {
+				padding: 0 3%;
+			}
+			
+			.mui-table-view-cell i {
+				color: #6cc93c;
+			}
+			.mui-table-view-cell img{
+				width: 50px;
+				height: 50px;
+				border-radius: 0;
+			}
+			.mui-media-body>p:first-child>span:first-child {
+				color: #929292;
+				font-size: 13px;
+			}
+			.mui-media-body>p:last-child{
+				color: #929292 ;
+			}
+			.mui-media-body>p:last-child>span:first-child{
+				width: 30px;
+				height: 20px;
+				border-radius: 10px;
+				text-align: center;
+				line-height: 20px;
+				color: #fff;
+			}
+			.unread{
+				background-color:#f25949 !important;
+			}
+			.read{
+				background-color: #929292 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<img src="img/userlogicon.png" class="mui-pull-left"/>
+					<div class="mui-media-body">
+						<p>
+							评论
+							<span class="mui-pull-right">2016-07-09</span>
+						</p>
+						<p>
+							非常感谢balabal
+							<span class="mui-pull-right read">
+								1
+							</span>
+						</p>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<img src="img/doctorlogicon.png" class="mui-pull-left"/>
+					<div class="mui-media-body">
+						<p>
+							解答
+							<span class="mui-pull-right">2016-07-09</span>
+						</p>
+						<p>
+							非常感谢balabal
+							<span class="mui-pull-right read">
+								1
+							</span>
+						</p>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<img src="img/good.png" class="mui-pull-left"/>
+					<div class="mui-media-body">
+						<p>
+							赞
+							<span class="mui-pull-right">2016-07-09</span>
+						</p>
+						<p>
+							非常感谢balabal
+							<span class="mui-pull-right unread">
+								1
+							</span>
+						</p>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<img src="img/home.png" class="mui-pull-left"/>
+					<div class="mui-media-body">
+						<p>
+							站内通知
+							<span class="mui-pull-right">2016-07-09</span>
+						</p>
+						<p>
+							非常感谢balabal
+							<span class="mui-pull-right unread">
+								1
+							</span>
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

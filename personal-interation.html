@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>互动</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<style type="text/css">
+			header i{
+				width: 30px;
+				height: 40px;
+				background-repeat: no-repeat;
+				background-image: url(img/whiteinteraction.png);
+				background-size:25px 25px ;
+				background-position: 80% 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" onclick="history.go(-1)"></a>
+			<span id="title">互动 </span>
+			<i class="mui-pull-right"></i>
+		</header>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.init({
+				subpages: [{
+					url: 'personal-interaction-subpage.html',
+					id: 'personal-interaction-subpage',
+					styles: {
+						top: '45px', //mui标题栏默认高度为45px；
+						bottom: '0', //默认为0px，可不定义；
+						bounce: 'vertical',
+						bounceBackground: '#efeff4',
+					},
+					extras: {
+					}
+				}]
+			})
+		</script>
+	</body>
+
+</html>

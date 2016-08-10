@@ -82,6 +82,10 @@
 				width: 60px;
 				height: 80px;
 			}
+			
+			#app {
+				visibility: hidden;
+			}
 		</style>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4Uy4A9KfbmA1uX0vbmHnZRkqswg08wvg"></script>
 	</head>
@@ -90,25 +94,20 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-bars mui-pull-left"></a>
 			<span id="title">北京 </span><i class="mui-icon mui-icon-arrowup"></i>
-			<input type="search" name="" required="" placeholder="输入医师名称" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh-CN">
+			<input type="search" id="citysearch"  name="" required="" placeholder="输入城市名称" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh-CN">
 		</header>
 		<div class="mui-content">
-			<ul>
+			<ul id="app">
 				<li class="selected">全城</li>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>
-				<li>5</li>
-				<li>6</li>
-				<li>7</li>
-				<li>8</li>
+				<li v-for="item in items">
+					{{item.text}}
+				</li>
 			</ul>
 			<div class="mui-clearfix">
 
 			</div>
 			<div class="mui-btn mui-btn-block">
-				<p>当前城市：<span id="current-city">北京市</span></p>
+				<p>当前城市：<span id="current-city"></span></p>
 				<p>切换 <i class="mui-icon mui-icon-arrowright"></i></p>
 			</div>
 			<footer>
@@ -116,15 +115,41 @@
 			</footer>
 		</div>
 		<script src="js/mui.min.js"></script>
+		<script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
 			//百度地图定位跟当前城市
 			function myFun(result) {
-			var	 cityName = result.name;
-			document.getElementById("current-city").innerText =cityName;
+				var cityName = result.name;
+				document.getElementById("current-city").innerText = cityName;
+				fSearchDistrict(cityName);
+				
+				var vueContent = new Vue({
+					el: "#app",
+					data: data,
+					methods: {
+					},
+					ready: function() {
+						document.getElementById("app").style.visibility = "visible"
+					}
+				})
 			}
 			var myCity = new BMap.LocalCity();
 			myCity.get(myFun);
+			//城市级联
+			//已知省市区的市，索引到该市下所有的区
+			function fSearchDistrict(e) {
+				for(i = 0; i < cityData3.length; i++) {
+					if(cityData3[i].children[0].text === e || cityData3[i].children[0].text === (e + "市")) {
+						var thisIndex = i;
+						var districtArr = cityData3[thisIndex].children[0].children;
+						data = {
+							items: districtArr
+						}
+					}
+				}
+			}
 		</script>
 	</body>
 

@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的病例</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<style type="text/css">
+			header i{
+				width: 30px;
+				height: 40px;
+				background-repeat: no-repeat;
+				background-image: url(img/whitecase.png);
+				background-size:20px 25px ;
+				background-position: 80% 10px;
+			}
+			.mui-content-top{
+				width: 100%;
+				text-align: center;
+				height: 80px;
+			}
+			.mui-content-top img{
+				width: 80px;
+				height: 80px;
+				border-radius: 100%;
+				margin-top: 40px;
+			}
+			.mui-content .mui-content-middle{
+				background-color: #fff;
+			}
+			.mui-content-middle{
+				padding: 50px 0 20px 30px;
+				border-bottom: 1px solid #EFEFF4;
+				line-height: 0.9em;
+			}
+			.mui-content-middle .mui-pull-right{
+				margin-right: 30%;
+			}
+			.mui-content-middle p,.mui-content-bottom p{
+				color:#000000;
+			}
+			.mui-content-bottom{
+				padding: 10px 30px;
+				background-color: #fff;
+				line-height: 1.4em;
+			}
+			.mui-btn-group{
+				margin-top: 10px;
+				text-align: center;
+			}
+			.mui-btn{
+				border: 0;
+				color: #fff;
+				width: 80px;
+			}
+			#edit-case-btn{
+				background-color: #60c826;
+			}
+			#show-morehis-btn{
+				margin-left: 30px;
+				background-color: #1abc9c;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" onclick="history.go(-1)"></a>
+			<span id="title">我的病例 </span>
+			<i class="mui-pull-right"></i>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-top">
+				<img src="img/doctor.jpg"/>
+			</div>
+			<div class="mui-content-middle">
+				<p><span>姓名 ：某某某</span><span class="mui-pull-right">出生地：湖南长沙</span></p>
+				<p><span>性别 ：男</span><span class="mui-pull-right">民族：汉族</span></p>
+				<p><span>年龄 ：23岁</span><span class="mui-pull-right">职业：工人</span></p>
+				<p><span>婚姻 ：未婚</span></p>
+				<p><span>地址 ：长沙市某某区某某</span></p>
+				<p><span>入住时间 ：2003年4月2日10时20分</span></p>
+				<p><span>记录日期: 2003年4月2日</span></p>
+				<p><span>病史陈述者: 患者本人</span></p>
+				<p><span>主诉: 转移性右下腹疼痛伴发热 36 小时</span></p>
+			</div>
+			<div class="mui-content-bottom">
+				<p>现病史：</p>
+				<p id="case-history-inner"></p>
+			</div>
+			<div class="mui-btn-group">
+				<div class="mui-btn" id="edit-case-btn">
+					编辑
+				</div>
+				<div class="mui-btn" id="show-morehis-btn">
+					更多
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var test = "因为这个帖子要编辑的内容还不少，设计的这个意思是，不把表单全部放在一个说明的那一栏就删掉吧不把表单全部放在一个说明的那一栏就删掉吧";
+			var editCaseBtn = document.getElementById("edit-case-btn");
+			var showMoreBtn = document.getElementById("show-morehis-btn");
+			var caseHisInner = document.getElementById("case-history-inner");
+			 function fSimplifyCaseHis (caseinner) {
+				if(caseinner.length <= 40){
+					caseHisInner.innerText = caseinner;
+					showMoreBtn.style.display = "none";
+					
+				}else{
+					caseHisInner.innerText = caseinner.slice(0,40)+"......";
+					showMoreBtn.style.display = "inline-block";
+				}
+			}
+			 fSimplifyCaseHis(test);
+			 showMoreBtn.addEventListener('tap',function(){
+			 	caseHisInner.innerText = test;
+			 	showMoreBtn.style.display = "none";
+			 })
+		</script>
+	</body>
+
+</html>

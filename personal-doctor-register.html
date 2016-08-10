@@ -14,9 +14,9 @@
 			
 			.mui-input-group i {
 				position: absolute;
-				width: 100px;
+				width: 30px;
 				height: 30px;
-				right: -20px;
+				right: 20px;
 			}
 			
 			.mui-input-group .visible {
@@ -54,6 +54,10 @@
 			#sendcode {
 				color: #939393;
 			}
+			#register{
+				color: #fff;
+				background-color: #f25949;
+			}
 		</style>
 	</head>
 
@@ -65,38 +69,27 @@
 		</header>
 		<div class="mui-content">
 			<div class="mui-input-group">
-				<input type="number" name="phone" id="phone" value="" placeholder="请输入11位中国大陆手机号" />
+				<input type="number" name="phone" id="phone"  placeholder="请输入11位手机号" />
 				<input type="button" name="" id="sendcode" value="获取验证码" />
-				<input type="number" name="msgcode" id="msgcode" value="" placeholder="填写短信验证码" />
-				<input type="password" name="password" id="password" value="" placeholder="设置密码,6-20位字母或数字" />
+				<input type="number" name="msgcode" id="msgcode" placeholder="填写短信验证码" />
+				<input type="password" name="password" id="password" placeholder="设置密码,6-20位字母或数字" />
 				<i id="changevisible" class="visible"></i>
 				<span>点击注册即同意 XXX在线服务条款</span>
 			</div>
-			<input type="button" id="login" value="注册" disabled="disabled" />
+			<input type="button" id="register" value="注册"  />
 			<p>
-				<span>登录</span>
+				<span id="login">登录</span>
 			</p>
 		</div>
 		<script src="js/mui.min.js"></script>
-		<script src="js/loginabout.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="js/loginabout.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/reg.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
-			var phoneNumber = document.getElementById("phone");
-			var msgCode = document.getElementById("msgcode");
-			var sendCode = document.getElementById("sendcode");
-			var pwd = document.getElementById("password");
-			sendCode.addEventListener('tap', function() {
-				if(phoneNumber.value == "" || phoneNumber.value == null) {
-					mui.toast("请输入手机号")
-				} else {
-					timer(this, 60);
-				}
-			})
-			var changeVisible = document.getElementById("changevisible");
-			var visClass;
-			changeVisible.addEventListener("tap", function() {
-				toggleClass(changeVisible, visClass, "visible", "invisible");
-			})
+			document.getElementById("login").onclick = function() {
+				location.href = "personal-doctor-login.html"
+			}
 		</script>
 	</body>
 

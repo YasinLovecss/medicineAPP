@@ -3,77 +3,263 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Hello MUI</title>
+		<title>我的信息</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="css/mui.min.css">
 		<style>
-			html,body {
+			html,
+			body {
 				background-color: #efeff4;
 			}
-			.title{
+			
+			.mui-bar {
+				padding: 0;
+				background-color: #eeeeee;
+			}
+			
+			.title {
 				margin: 20px 15px 10px;
 				color: #6d6d72;
 				font-size: 15px;
+			}
+			
+			.mui-title {
+				color: #a99a94;
+			}
+			
+			.mui-content-top {
+				width: 100%;
+				height: 150px;
+			}
+			
+			.mui-content-top>img {
+				width: 80px;
+				height: 80px;
+				margin: 35px 5%;
+				border-radius: 100%;
+			}
+			
+			.mui-content-top .rightpart {
+				margin-top: 50px;
+			}
+			
+			.mui-content-top .rightpart p {
+				color: #fff;
+			}
+			
+			.mui-content-top .rightpart p:first-child {
+				font-size: 20px;
+			}
+			
+			.mui-content-top>i {
+				color: #fff;
+				margin: 70px 5%;
+			}
+			
+			.userpart {
+				background-color: #1abc9c;
+			}
+			.doctorpart{
+				background-color: #f25949;
+			}
+			
+			.mui-content-middle {
+				width: 100%;
+				height: 150px;
+				margin-top: 10px;
+			}
+			
+			.mui-content-middle div {
+				width: 30%;
+				height: 150px;
+				text-align: center;
+				background-color: #fff;
+				float: left;
+				margin-left: 2%;
+			}
+			
+			.mui-content-middle div:last-child {
+				position: relative;
+				top: -4px;
+			}
+			
+			.mui-content-middle div p {
+				margin: 20px 0 30px;
+				font-size: 3em;
+				color: #60c826;
+			}
+			
+			.mui-content-middle div img {
+				width: 30px;
+				margin-top: 10px;
+			}
+			
+			.mui-content-bottom .user-list {
+				/*background-color: #EFEFF4;*/
+				list-style-type: none;
+				padding-left: 3%;
+				width: 100%;
+			}
+			
+			.mui-content-bottom .user-list .user-list-cell {
+				width: 45%;
+				height: 50px;
+				float: left;
+				background-color: #fff;
+				text-align: center;
+				line-height: 50px;
+				border-radius: 5px;
+				margin-bottom: 10px;
+			}
+			
+			.mui-content-bottom .user-list .user-list-cell img {
+				float: left;
+				width: 20px;
+				margin: 15px -20px 0 30px;
+			}
+			
+			.mui-content-bottom ul li:nth-child(2n) {
+				margin-left: 5%;
+			}
+			
+			#userul {
+				display: none;
+			}
+			#app{
+				display: none;
 			}
 		</style>
 	</head>
 
 	<body>
-		<!--<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">设置</h1>
-		</header>-->
-		<div class="mui-content">
-			<div class="title">
-				这是webview模式选项卡中的第5个子页面，该页面展示一个常见的设置示例,hahahahahah
+		<div class="mui-content" id="app">
+			<div class="mui-content-top" v-bind:class = "[bool.istrue? 'doctorpart':'userpart']">
+				<img src="img/doctor.jpg" class="mui-pull-left" />
+				<div class="rightpart mui-pull-left">
+					<p>我是{{info.nickname}}</p>
+					<p>欢迎来到一路康宁</p>
+				</div>
+				<i class="mui-icon mui-icon-arrowright mui-pull-right"></i>
 			</div>
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
-						新消息通知
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
-						隐私
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
-						通用
-					</a>
-				</li>
-			</ul>
-			<ul class="mui-table-view" style="margin-top: 25px;">
-				<li class="mui-table-view-cell">
-					<a id="about" class="mui-navigate-right">
-						关于mui
-					</a>
-				</li>
-			</ul>
-			<ul class="mui-table-view" style="margin-top: 25px;">
-				<li class="mui-table-view-cell">
-					<a style="text-align: center;color: #FF3B30;">
-						退出登录
-					</a>
-				</li>
-			</ul>
+			<div class="mui-content-middle">
+				<div class="personal-letter">
+					<p>{{info.letterNum}}</p>
+					站内私信<br />
+					<img src="img/letter.png" />
+				</div>
+				<div class="my-postings">
+					<p>{{info.sendPostNum}}</p>
+					我的发帖
+					<br />
+					<img src="img/mypublish.png" /></div>
+				<div class="reply-postings">
+					<p>{{info.reviewNum}}</p>
+					回复帖子
+					<br />
+					<img src="img/review.png" /></div>
+			</div>
+			<div class="mui-content-bottom">
+				<!--以下为患者身份显示内容-->
+				<ul class="user-list" v-if="!bool.istrue">
+					<li class="user-list-cell" @click = "fToMyOrders()">
+						<img src="img/order.png" /> 全部订单
+					</li>
+					<li class="user-list-cell" @click = "fToMyStars()">
+						<img src="img/stars.png" /> 我的收藏
+					</li>
+					<li class="user-list-cell" @click = "fToMyCase()">
+						<img src="img/case.png" /> 个人病例
+					</li>
+					<li class="user-list-cell" @click = "fToMyAdress()">
+						<img src="img/locationgreen.png" /> 地址管理
+					</li>
+					<li class="user-list-cell" @click="fToSet()">
+						<img src="img/settings.png" /> 系统设置
+					</li>
+					<li class="user-list-cell" @click = "fToMyInteraction()">
+						<img src="img/interaction.png" /> 互动
+					</li>
+				</ul>
+				<!--//患者身份显示内容结束-->
+				<!--以下为医师身份显示内容-->
+				<ul class="user-list" v-else>
+
+					<li class="user-list-cell" @click = "fToMyStars()">
+						<img src="img/stars.png" /> 我的收藏
+					</li>
+					<li class="user-list-cell" @click = "fToMyIncome()">
+						<img src="img/income.png" /> 分销收入
+					</li>
+					<li class="user-list-cell" @click = "fToMyBarcode()">
+						<img src="img/barcode.png" /> 推广二维码
+					</li>
+					<li class="user-list-cell" @click="fToSet()">
+						<img src="img/settings.png" /> 系统设置
+					</li>
+					<li class="user-list-cell" @click = "fToMyInteraction()">
+						<img src="img/interaction.png" /> 互动
+					</li>
+				</ul>
+				<!--//医师身份显示内容部分结束-->
+			</div>
 		</div>
-		</style>
 	</body>
 	<script src="js/mui.min.js"></script>
+	<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 		mui.init({
-			swipeBack:true //启用右滑关闭功能
+			swipeBack: false //启用右滑关闭功能
 		});
-		document.getElementById("about").addEventListener('tap',function () {
-			//获得主页面的webview
-			var main = plus.webview.currentWebview().parent();
-			//触发主页面的gohome事件
-			mui.fire(main,'gohome');
-		});
+//		localStorage.myType = "doctor";
+		localStorage.myType = "patient";
+		arr = {
+			bool:{
+				istrue : ("doctor" === localStorage.myType)
+			},
+			info:{
+				"nickname":"张三",
+				"letterNum":34,
+				"sendPostNum":29,
+				"reviewNum":59
+			}
+		}
+		var vueCont = new Vue({
+			el:"#app",
+			data:arr,
+			methods:{
+				fToSet:function() {
+					location.href = "personal-settings.html";//跳转到设置
+				},
+				fToMyStars:function(){
+					location.href = "personal-my-stars.html";//跳转到收藏
+				},
+				fToMyInteraction:function() {
+					location.href = "personal-interation.html"//跳转到互动页面
+				},
+				fToMyBarcode:function(){
+					location.href = "personal-doctor-barcode.html";//跳转到二维码页面
+				},
+				fToMyIncome:function() {
+					location.href = "personal-doctor-income.html";//跳转到分销收入
+				},
+				fToMyOrders:function(){
+					location.href = "personal-user-orders.html";//跳转到全部订单
+				},
+				fToMyCase:function() {
+					location.href = "personal-user-my-case.html";//跳转到个人病例
+				},
+				fToMyAress:function() {
+					location.href = "personal-user-addAdress.html";//跳转到地址管理
+				}
+			},
+			ready:function () {
+				document.getElementById("app").style.display  = "block";
+			}
+		})
 	</script>
+
 </html>

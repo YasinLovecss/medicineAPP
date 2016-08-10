@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>推广二维码</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<style type="text/css">
+			header i{
+				width: 30px;
+				height: 40px;
+				background-repeat: no-repeat;
+				background-image: url(img/whitebarcode.png);
+				background-size:20px 20px ;
+				background-position: 80% 10px;
+			}
+			.mui-content-middle{
+				width: 80%;
+				height: 400px;
+				margin:100px 10%;
+				background-color: #fff;
+				padding-top: 10px;
+				text-align: center;
+				
+			}
+			.mui-content-middle .img-content{
+				width: 100%;
+				height: 120px;
+				background-image: url(img/headbg.jpg);
+				background-size: 100% 100%;
+
+			}
+			.mui-content-middle .img-content img{
+				width: 80px;
+				height: 80px;
+				border-radius: 100%;
+				margin-top:20px ;
+			}
+			.mui-content-middle>img{
+				width: 200px;
+				height: 200px;
+				margin: 20px 0 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span id="title">推广二维码 </span>
+			<i class="mui-pull-right"></i>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-middle">
+				<div class="img-content">
+					<img src="img/doctor.jpg"/>
+				</div>
+				<img src="img/barcodetem.png"/>
+				<p>扫描二维码,查看更多信息</p>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+		</script>
+	</body>
+
+</html>

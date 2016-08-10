@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的收藏</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<style type="text/css">
+			header i{
+				width: 30px;
+				height: 40px;
+				background-repeat: no-repeat;
+				background-image: url(img/whitestar.png);
+				background-size:20px 20px ;
+				background-position: 80% 10px;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span id="title">我的收藏 </span>
+			<i class="mui-pull-right"></i>
+		</header>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.init({
+				subpages: [{
+					url: 'personal-my-postings-subpage.html',
+					id: 'personal-my-postings-subpage',
+					styles: {
+						top: '45px', //mui标题栏默认高度为45px；
+						bottom: '0px', //默认为0px，可不定义；
+						bounce: 'vertical',
+						bounceBackground: '#efeff4'
+					},
+					extras: {}
+				}]
+			})
+		</script>
+	</body>
+
+</html>

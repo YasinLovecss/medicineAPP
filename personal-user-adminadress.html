@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户地址管理</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<style type="text/css">
+			header i{
+				width: 30px;
+				height: 40px;
+				background-repeat: no-repeat;
+				background-image: url(img/whiteloca.png);
+				background-size:20px 25px ;
+				background-position: 80% 10px;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span id="title">地址管理 </span>
+			<i class="mui-pull-right"></i>
+		</header>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.init({
+				subpages: [{
+					url: 'personal-user-adminadress-subpage.html',
+					id: 'personal-user-adminadress-subpage',
+					styles: {
+						top: '45px', //mui标题栏默认高度为45px；
+						bottom: '0px', //默认为0px，可不定义；
+						bounce: 'vertical',
+						bounceBackground: '#efeff4'
+					},
+					extras: {}
+				}]
+			})
+		</script>
+	</body>
+
+</html>
